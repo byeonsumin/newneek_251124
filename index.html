@@ -4,8 +4,179 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>변수민 - 디자인구성요소설계</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 1920px;
+            overflow-x: hidden;
+        }
+
+        .container {width: 1500px;}
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #fff;
+            display: flex; align-items: center; padding: 23px 130px;
+            border-bottom: 1px solid #000;
+        }
+        header a .search {width: 25px; height: 25px;}
+        header ul {display: flex; display: inline-block; width: 1410px; text-align: center; padding-right: 200px;}
+        header ul li {
+            display: flex; margin-right: 60px; display: inline-block;
+            justify-content: center;
+        }
+        header ul li a {font-size: 1.125rem;}
+        #container {padding: 130px 210px 0;}
+        #container .bsm {display: inline-block; font-size: 0.938rem; margin-bottom: 50px;}
+        .h2_section {display: flex; justify-content: space-between;}
+        .h2_section h2 {font-size: 2.188rem; font-weight: 500; display: inline-block; margin-bottom: 21px;}
+        .sub {
+            width: 146px; height: 47px; background-color: #fff; border: 1px solid #FF8233; border-radius: 10px; padding: 13px 25px;
+            transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+        }
+        .sub:hover {
+            background-color: #FF8233; color: #fff; border-radius: 10px; padding: 13px 25px;
+        }
+        .glass_sub {display: flex; align-items: center; justify-content: space-between;}
+        .p_section {display: flex; flex-flow: column nowrap;}
+        .p_section .num {font-size: 1.188rem; font-weight: 500; display: inline-block; margin-bottom: 23px;}
+        .p_section .p_content {font-size: 1.188rem; font-weight: 500; display: inline-block; margin-bottom: 25px; line-height:170%;}
+        .span_group {display: flex; align-items: center; margin-bottom: 3px;}
+        .span_group p {display: flex; align-items: center; font-size: 1.063rem;}
+        .span_group span {font-size: 2rem;}
+        .p_section .p_list {display: flex;flex-flow: column nowrap; margin-bottom: 10px;}
+        .p_section .p_list>p {margin-bottom: 15px; display: inline-block; font-size: 1.063rem;}
+        .p_section .p_list>p:nth-last-child(1) {margin-bottom: 20px;}
+        .card .image_001 {padding-top: 10px;width: 1500px; height: 405px; object-fit: cover;}
+        .different {margin-top: 10px;display: flex; justify-content: center; align-items: center; margin-bottom: 70px;}
+        .different img {width: 638px; height: 309px; object-fit: cover;}
+        .different .different_contents {width: 862px; display: inline-block; text-align: center;}
+        .different .different_contents h3 {font-size: 1.563rem; font-weight: 500; display: inline-block; margin-bottom: 15px;}
+        .different .different_contents p {font-size: 1.125rem; font-weight: 400; line-height: 180%;}
+        .card .google {text-align: right; padding-top: 25px; padding-bottom: 20px; font-size: 1.188rem; font-weight: 500;}
+        .card .google_img {display: flex; margin-bottom: 80px;}
+        .card .google_img img {width: 750px; height: 357px; object-fit: cover;}
+        .card .glasses {width: 1500px; height: 485px; object-fit: cover; margin-bottom: 50px;}
+        .glasses_section {display: flex; flex-flow: column nowrap; align-items: center; margin-bottom: 40px;}
+        .card .sub_btn {
+            width: 146px; height: 47px; background-color: #fff; border: 1px solid #FF8233; border-radius: 10px; padding: 13px 25px;
+            transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+        }
+        .card .sub_btn:hover {background-color: #FF8233; color: #fff; border-radius: 10px; padding: 13px 25px;}
+        .google_section {background-color: #0B2F48; display: flex; flex-flow: column nowrap; align-items: center; padding: 61.5px 0;}
+        .google_section p {color: #fff; display: inline-block; font-size: 1.125rem; margin-bottom: 15px; font-weight: 400;}
+        .google_section p:nth-last-child(1) {margin-bottom: 0;}
+        footer {font-size: 1.125rem; width: 1920px; background-color: #111; display: inline-block; height: 133px; text-align: center; padding: 55.5px 0; color: #fff;}
+    </style>
 </head>
 <body>
-    
+    <header>
+        <h1><a href="#"><img src="./images/logo.png" alt="로고"></a></h1>
+        <nav>
+            <ul>
+                <li><a href="#" onclick="event.preventDefault()">정치</a></li>
+                <li><a href="#" onclick="event.preventDefault()">경제</a></li>
+                <li><a href="#" onclick="event.preventDefault()">트렌드</a></li>
+                <li><a href="#" onclick="event.preventDefault()">AI / 테크</a></li>
+            </ul>
+        </nav>
+        <a href="#" onclick="event.preventDefault()"><img class="search" src="./images/search.png" alt="검색아이콘"></a>
+    </header>
+    <div id="container">
+        <div class="h2_section">
+            <h2>구글은 왜 젠틀몬스터에 투자했을까?</h2>
+            <a class="sub" href="#" onclick="event.preventDefault()">뉴스 구독하기</a>
+        </div>
+        <p class="bsm">변수민, 2025/07/09</p>
+        <div class="card">
+            <div class="p_section">
+                <p class="num">1. 기술보다 감성: '구글 글래스'의 실패에서 배운 것</p>
+                <p class="p_content">구글은 2013년 '구글 글래스'로 웨어러블 시장에 도전했지만, 결과는 실패였습니다.</p>
+                <div class="p_list">
+                    <div class="span_group">
+                        <span>ㆍ</span><p>너무 기술 중심이었다</p>
+                    </div>
+                    <div class="span_group">
+                        <span>ㆍ</span><p>UX보다 ‘기능성’을 강조했다</p>
+                    </div>
+                    <div class="span_group">
+                        <span>ㆍ</span><p>패션 아이템으로 보기에 부담스러웠다</p>
+                    </div>
+                </div>
+            </div>
+            <img class="image_001" src="./images/image_001.png" alt="이미지1">
+        </div>
+        <div class="different">
+            <div class="different_contents">
+                <h3>이번에는 다릅니다!</h3>
+                <p>젠틀몬스터는 ‘기술이 아닌 감성’으로 승부하는 브랜드입니다.<br>
+                    구글이 그들과 손잡은 것은, 기술을 감성으로 감싸기 위한<br>
+                    전략적 선택으로 보입니다. 이유는 분명했습니다.
+                </p>
+            </div>
+            <img src="./images/image_002.png" alt="이미지2">
+        </div>
+        <div class="card">
+            <div class="p_section">
+                <div class="glass_sub">
+                    <p class="num">2. MZ세대의 취향, 스마트폰 다음은 안경?</p>
+                    <a class="sub" href="#" onclick="event.preventDefault()">뉴스 구독하기</a>
+                </div>
+                <p class="p_content">MZ세대는 기능보다 ‘감도’를 소비합니다. 단순히 AI 기능이 탑재되었다는 이유만으로 제품을 구매하지는 않죠.<br>
+                    그런 의미에서 젠틀몬스터의 합류는 마케팅적으로도 결정적입니다.</p>
+                    <div class="p_list">
+                        <div class="span_group">
+                            <span>ㆍ</span><p>트렌디한 디자인</p>
+                        </div>
+                        <div class="span_group">
+                            <span>ㆍ</span><p>인스타그래머블한 착용 이미지</p>
+                        </div>
+                        <div class="span_group">
+                            <span>ㆍ</span><p>글로벌 셀럽이 이미 착용한 브랜드력</p>
+                        </div>
+                    </div>
+            </div>
+                <p class="google">이 모든 것이 구글이 전하고 싶은 스마트 글래스의 ‘두 번째 이야기’에 잘 어울립니다.</p>
+                <div class="google_img">
+                    <img src="./images/image_004.jfif" alt="이미지4">
+                    <img src="./images/image_003.png" alt="이미지3">
+                </div>
+        </div>
+        <div class="card">
+            <div class="p_section">
+                <p class="num">3. 구글·삼성·젠틀몬스터 : K-라이프스타일 플랫폼이 될 수도</p>
+                <p class="p_content">보도에 따르면 구글은 삼성과의 협력을 통해 스마트 안경의 하드웨어 기술을 개발하고, 젠틀몬스터는 디자인을 맡습니다.<br>
+                    이 삼자 협력은 단순한 기기 개발을 넘어, ‘한국형 스마트 라이프스타일’의 가능성을 보여줍니다.</p>
+                    <div class="p_list">
+                        <div class="span_group">
+                            <span>ㆍ</span><p>실시간 번역, 내비게이션, 일정 확인 → “스마트폰 없는 일상”</p>
+                        </div>
+                        <div class="span_group">
+                            <span>ㆍ</span><p>안경을 쓰면 연결되는 AI 비서 (Gemini)</p>
+                        </div>
+                        <div class="span_group">
+                            <span>ㆍ</span><p>감성적 디자인 + 기능적 만족 → 스마트 안경의 대중화</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="glasses_section">
+                <img class="glasses" src="./images/image_005.png" alt="이미지5">
+                <a class="sub_btn" href="#" onclick="event.preventDefault()">뉴스 구독하기</a>
+            </div>
+        </div>
+    </div>
+    <div class="google_section">
+        <p>구글은 기술이 아닌 디자인과 감성을 택했다.</p>
+        <p>스마트 안경은 단순 디바이스가 아닌 새로운 콘텐츠 플랫폼이 될 수 있다.</p>
+    </div>
+    <footer>
+        ㈜뉴닉 | 서울특별시 마포구 어울마당로 35, 5층
+    </footer>
 </body>
 </html>
